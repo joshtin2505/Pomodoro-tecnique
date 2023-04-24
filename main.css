@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
+body {
+    background: #1f1f1f;
+}
+
+body h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cont-temp {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.cont-temp .bloque {
+    margin: 0 5px;
+    border: aliceblue 1px solid;
+}
