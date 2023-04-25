@@ -1,69 +1,46 @@
-let horas = 7;
-let minutos = 0;
-let segundos = 0;
-Segundo();
-//Defino los segundos
-function Segundo(){
-    let txtSegundos;
-    if (segundos < 0){
+let segundos = 5;
+let minutos = 70;
+let horas = 0;
+
+function Segundos() {
+    
+    document.getElementById('segundos').innerHTML = segundos < 10 
+        ? `0${segundos}`
+        : segundos;
+    
+
+    if (segundos == 0 && minutos == 0 && horas == 0){
+        clearInterval(time);   
+    }
+    else if (segundos == 0 && minutos > 0){
+        minutos--;
         segundos = 59;
     }
-
-    //mostrar segundos
-    if (segundos < 10){
-        txtSegundos = `0${segundos}`;
+    else if (segundos == 0 && minutos == 0 && horas > 0){
+        horas--;
+        minutos = 59;
+        segundos = 59;
     }
-    else{
-        txtSegundos = segundos;
-    }
-    document.getElementById("segundos").innerHTML = txtSegundos;
-    segundos--;
-    Minutos(segundos);
-}
-//defino los minutos
-function Minutos(segundos) {
-    let txtMinutos;
-    if (segundos == -1 && minutos !== 0){
-        setTimeout(()=>{
-            minutos--;
-        },500)
-    }
-    else if(segundos == -1 && minutos == 0){
-        setTimeout(()=>{
-            minutos = 59;
-        },500)
+    else {
+        segundos--;
     }
 
-    if (minutos < 10) {
-        txtMinutos = `0${minutos}`;
-    }
-    else{
-        txtMinutos = minutos;
-    }
-    document.getElementById("minutos").innerHTML = txtMinutos;
-    Horas(segundos,minutos);
+    document.getElementById('minutos').innerHTML = minutos < 10
+        //si minutos < 0 entonces se cumplira esta condicion
+        ? `0${minutos}`
+        //sino esta
+        : minutos;
+
+    document.getElementById('horas').innerHTML = horas < 10
+        ? `0${horas}`
+        : horas;
 }
 
-function Horas(segundos,minutos) {
-    let txtHoras;
-    if(segundos == -1 && minutos == 0 && horas!== 0){
-        setTimeout(()=>{
-            horas--;
-        },500)
-    }
-    else if(segundos == -1 && minutos == 0 && horas == 0){
-        setTimeout(()=>{
-            horas = 2;
-        },500)
-    }
+const time = setInterval(Segundos,1000);
+//almaseno el set interval dentro de una constante para despues 
+//poder pasar un clear interval dentro de la funcion con el parametro 
+//del nombre de la constante, demodo que el contador se detenga
 
-    if (horas < 10) {
-        txtHoras = `0${horas}`;
-    }
-    else{
-        txtHoras = horas;
-    }
-    document.getElementById("horas").innerHTML = txtHoras;
-}
-//ejecuto segundos
-setInterval(Segundo, 1000)
+
+
+//poner la equivalencia de 60 min == 1h

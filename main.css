@@ -40,8 +40,20 @@ body h1 {
     box-shadow: 0px 0px 6px 2px #72727272 inset;
     font-size: 40px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 .cont-temp .bloque p{
     font-size: 110%;
     font-weight: bold;
+}
+.cont-temp .bloque div:hover{
+    color: rgb(255, 92, 92);
+}
+/* new cont */
+
+.cont-option{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
