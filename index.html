@@ -33,12 +33,26 @@
             <p>Segundos</p>
         </div>
     </div>
-    <div class="cont-option">
-        <div class="options">
+    <div class="cont-inputs">
+        <div class="inputs">
+            <input id="horas" type="number" placeholder="Horas" min="0" >
+            <input id="minutos" type="number" placeholder="Minutos" min="0" >
+            <input id="segundos" type="number" placeholder="segundos" min="0" >
             
         </div>
     </div>
+    <div class="cont-option">
+        <div class="options">
+
+            <button id="stop" class="stop btnSS"><em>Stop</em><i class="fa-solid fa-stop"></i></button>
+
+            <button id="pause" class="pause btnSS"><em>pause</em><i class="fa-solid fa-pause"></i></button>
+
+            <button class="start btnSS" onclick="Segundos()"><em>Start</em><i class="fa-solid fa-play"></i></button>
+        </div>
+    </div>
     <script src="Pomodoro.js"></script>
+    <script src="Eventos.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,32 @@
-let segundos = 5;
-let minutos = 70;
+let segundos = 0;
+let minutos = 0;
 let horas = 0;
 
+//Debo reparar un error que da aqui NaN
+let seg = document.getElementById('segundos').valueAsNumber;
+    let min = document.getElementById('minutos').valueAsNumber;
+    let hours = document.getElementById('horas').valueAsNumber;
+    segundos = Number(seg);
+    minutos = Number(min);
+    horas = Number(hours);
+
+
 function Segundos() {
+
+    const time = setInterval(Segundos,1000);
     
+    let pause = document.getElementById('pause');
+    pause.addEventListener('click', function(){
+        clearInterval(time);
+    });
+    
+    let stop = document.getElementById('stop');
+    stop.addEventListener('click', function(){
+        segundos = 0; minutos = 0; horas = 0;
+    });
+
+
+
     document.getElementById('segundos').innerHTML = segundos < 10 
         ? `0${segundos}`
         : segundos;
@@ -36,7 +59,7 @@ function Segundos() {
         : horas;
 }
 
-const time = setInterval(Segundos,1000);
+
 //almaseno el set interval dentro de una constante para despues 
 //poder pasar un clear interval dentro de la funcion con el parametro 
 //del nombre de la constante, demodo que el contador se detenga

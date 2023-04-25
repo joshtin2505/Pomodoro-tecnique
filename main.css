@@ -51,9 +51,40 @@ body h1 {
     color: rgb(255, 92, 92);
 }
 /* new cont */
+.cont-inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.cont-inputs input{
+    display: flex;
+    margin: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #505050;
+}
+/* new cont */
 
 .cont-option{
     display: flex;
     justify-content: center;
     margin-top: 25px;
+}
+.btnSS{
+    border: none;
+    border-radius: 5px;
+    background: #505050;
+    padding: 10px;
+    transition: 0.3s;
+}
+.btnSS:hover{
+    scale: 1.05;
+}
+.btnSS i{
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
 }
